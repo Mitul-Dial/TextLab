@@ -16,10 +16,7 @@ export default function TextForm(props) {
     props.showAlert('Extra spaces removed!',"success")
   };
   const handleCopyClick = () => {
-    let copyText = document.getElementById("textForAnalyze");
-    copyText.select();
-    document.getSelection().removeAllRanges();
-    navigator.clipboard.writeText(copyText.value);
+    navigator.clipboard.writeText(text);
     props.showAlert('Text copied!',"success")
   };
   const handleClearClick = () => {
