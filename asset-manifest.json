@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/TextLab/static/css/main.dc4d6ff2.css",
+    "main.js": "/TextLab/static/js/main.cb5b5780.js",
+    "static/js/453.96453769.chunk.js": "/TextLab/static/js/453.96453769.chunk.js",
+    "index.html": "/TextLab/index.html",
+    "main.dc4d6ff2.css.map": "/TextLab/static/css/main.dc4d6ff2.css.map",
+    "main.cb5b5780.js.map": "/TextLab/static/js/main.cb5b5780.js.map",
+    "453.96453769.chunk.js.map": "/TextLab/static/js/453.96453769.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc4d6ff2.css",
+    "static/js/main.cb5b5780.js"
+  ]
+}
