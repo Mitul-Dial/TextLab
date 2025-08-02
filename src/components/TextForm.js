@@ -209,7 +209,7 @@ export default function TextForm(props) {
         </div>
       </div>
 
-      <div className="button-section">
+      <div className="button-section button-section-compact">
         <h3 className="section-title">
           <i className="fas fa-tools"></i>
           Utilities
@@ -248,6 +248,53 @@ export default function TextForm(props) {
             Clear All
           </button>
         </div>
+      </div>
+
+      <div className="results-container">
+        {extractedEmails.length > 0 && (
+          <div className="result-card">
+            <div className="result-header">
+              <h4 className="result-title">
+                <i className="fas fa-envelope"></i>
+                Extracted Emails
+              </h4>
+              <div className="result-count">{extractedEmails.length}</div>
+            </div>
+            <ul className="result-list">
+              {extractedEmails.map((email, index) => (
+                <li key={index} className="result-item">
+                  {email}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {extractedUrls.length > 0 && (
+          <div className="result-card">
+            <div className="result-header">
+              <h4 className="result-title">
+                <i className="fas fa-link"></i>
+                Extracted URLs
+              </h4>
+              <div className="result-count">{extractedUrls.length}</div>
+            </div>
+            <ul className="result-list">
+              {extractedUrls.map((url, index) => (
+                <li key={index} className="result-item">
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="result-link"
+                  >
+                    {url}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
 
       <div className="tool-panel">
@@ -317,53 +364,6 @@ export default function TextForm(props) {
             <div className="frequency-word">"{wordFrequency.word}"</div>
             <div className="frequency-count">{wordFrequency.count}</div>
             <div>occurrences found</div>
-          </div>
-        )}
-      </div>
-
-      <div className="results-container">
-        {extractedEmails.length > 0 && (
-          <div className="result-card">
-            <div className="result-header">
-              <h4 className="result-title">
-                <i className="fas fa-envelope"></i>
-                Extracted Emails
-              </h4>
-              <div className="result-count">{extractedEmails.length}</div>
-            </div>
-            <ul className="result-list">
-              {extractedEmails.map((email, index) => (
-                <li key={index} className="result-item">
-                  {email}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {extractedUrls.length > 0 && (
-          <div className="result-card">
-            <div className="result-header">
-              <h4 className="result-title">
-                <i className="fas fa-link"></i>
-                Extracted URLs
-              </h4>
-              <div className="result-count">{extractedUrls.length}</div>
-            </div>
-            <ul className="result-list">
-              {extractedUrls.map((url, index) => (
-                <li key={index} className="result-item">
-                  <a
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="result-link"
-                  >
-                    {url}
-                  </a>
-                </li>
-              ))}
-            </ul>
           </div>
         )}
       </div>

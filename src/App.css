@@ -355,6 +355,11 @@ body {
   margin-bottom: 2rem;
 }
 
+/* NEW: Compact spacing for utilities section */
+.button-section-compact {
+  margin-bottom: 1rem;
+}
+
 .section-title {
   font-size: 1.25rem;
   font-weight: 600;
@@ -451,14 +456,25 @@ body {
   color: var(--text-muted);
 }
 
+/* UPDATED: Results container positioning and styling */
 .results-container {
   display: grid;
   gap: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* NEW: Enhanced styling when results are present */
+.results-container:not(:empty) {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
 }
 
 .result-card {
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
@@ -498,12 +514,20 @@ body {
 
 .result-item {
   padding: 0.75rem;
-  background-color: var(--bg-primary);
+  background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   font-family: 'Courier New', monospace;
   font-size: 0.875rem;
   word-break: break-all;
+}
+
+[data-theme="dark"] .results-container:not(:empty) {
+  background-color: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .result-item {
+  background-color: var(--bg-primary);
 }
 
 .result-link {

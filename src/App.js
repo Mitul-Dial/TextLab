@@ -61,3 +61,5 @@ function App() {
 }
 
 export default App;
+
+// To Remember: I have removed the  "homepage": "https://MitulDial.github.io/TextLab" from the package.jon because it was taking the page the "/TextLab" directory. This is only used if I want access my through free domain link assigned by the GitHub
