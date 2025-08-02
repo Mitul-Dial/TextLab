@@ -1,159 +1,102 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function About(props) {
-  // The mode (dark/light) is now controlled by a parent component
-  // and passed down via props. The internal useState and toggleMode
-  // are no longer needed here, as the mode is managed globally.
+  const [activeItem, setActiveItem] = useState(0);
 
-  // Define colors based on the current mode
-  const backgroundColor = props.mode === 'dark' ? '#212529' : 'white';
-  const textColor = props.mode === 'dark' ? 'white' : 'black';
-  const accordionItemBg = props.mode === 'dark' ? '#343a40' : 'white'; // Slightly different shade for items
-  const accordionBodyBg = props.mode === 'dark' ? '#495057' : 'white'; // Darker shade for body content
-  const accordionBorderColor = props.mode === 'dark' ? '#495057' : 'rgba(0,0,0,.125)';
+  const toggleAccordion = (index) => {
+    setActiveItem(activeItem === index ? -1 : index);
+  };
+
+  const accordionData = [
+    {
+      title: "Your All-in-One Text Utility",
+      icon: "fas fa-magic",
+      content:
+        "TextLab is a powerful and efficient tool designed to analyze and manipulate your text instantly. Whether you need to quickly count words and characters, format text to uppercase or lowercase, or clean up extra spaces, our platform provides a seamless solution for all your text-related needs.",
+    },
+    {
+      title: "Simple, Fast, and Free",
+      icon: "fas fa-heart",
+      content:
+        "Our mission is to provide a free and accessible tool for everyone. TextLab is a completely free character and word counter that gives you instant statistics for any text you input. It's perfect for students, writers, and professionals who need to meet specific word or character limits for their work.",
+    },
+    {
+      title: "Browser-Agnostic and Compatible",
+      icon: "fas fa-globe",
+      content:
+        "TextLab is built to work seamlessly on any modern web browser, including Chrome, Firefox, Safari, and Opera. Whether you are on a desktop, tablet, or mobile device, you can access and use our tool effortlessly. It's the perfect companion for counting characters in documents, emails, social media posts, and more.",
+    },
+    {
+      title: "Advanced Text Processing",
+      icon: "fas fa-cogs",
+      content:
+        "Beyond basic text manipulation, TextLab offers advanced features like email and URL extraction, word frequency analysis, find and replace functionality, and duplicate line removal. Our tool helps you process and analyze text in ways that save time and increase productivity.",
+    },
+    {
+      title: "Privacy-Focused Design",
+      icon: "fas fa-shield-alt",
+      content:
+        "Your privacy is our priority. All text processing happens locally in your browser - we never store, transmit, or have access to your text content. Your data stays completely private and secure while you work with our tools.",
+    },
+  ];
 
   return (
-    // Main container div, its background and text color change based on props.mode
-    <div className="container" style={{
-      backgroundColor: backgroundColor,
-      color: textColor,
-    }}>
-      {/* Main heading for the About page */}
-      <h1 className="my-3">About TextLab</h1>
-      
-      {/* Accordion component with inline styles for its elements */}
-      <div className="accordion" id="accordionExample" style={{
-        // The accordion itself doesn't need a background here, items will cover it
-      }}>
-        {/* First accordion item: Your All-in-One Text Utility */}
-        <div className="accordion-item" style={{ // Apply style to the item itself
-          backgroundColor: accordionItemBg,
-          color: textColor,
-          border: `1px solid ${accordionBorderColor}`
-        }}>
-          <h2 className="accordion-header" id="headingOne">
-            <button
-              className="accordion-button"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseOne"
-              aria-expanded="true"
-              aria-controls="collapseOne"
-              style={{
-                // Apply !important to override Bootstrap's default button styles
-                backgroundColor: `${accordionItemBg} !important`,
-                color: `${textColor} !important`,
-                // Note: Overriding Bootstrap's accordion arrow icon (which is a background-image with filter)
-                // is extremely difficult with inline styles. It might remain default color.
-              }}
-            >
-              {/* Title for the first dropdown */}
-              <strong>Your All-in-One Text Utility</strong>
-            </button>
-          </h2>
-          <div
-            id="collapseOne"
-            className="accordion-collapse collapse show"
-            aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample"
-          >
-            {/* Content for the first dropdown */}
-            <div className="accordion-body" style={{
-              backgroundColor: `${accordionBodyBg} !important`, // Darker shade for body
-              color: `${textColor} !important`,
-            }}>
-              TextLab is a powerful and efficient tool designed to analyze and
-              manipulate your text instantly. Whether you need to quickly count
-              words and characters, format text to uppercase or lowercase, or
-              clean up extra spaces, our platform provides a seamless solution
-              for all your text-related needs.
-            </div>
-          </div>
-        </div>
+    <div className="about-container">
+      <h1 className="about-title">
+        <i className="fas fa-info-circle" style={{ marginRight: "1rem" }}></i>
+        About TextLab
+      </h1>
 
-        {/* Second accordion item: Simple, Fast, and Free */}
-        <div className="accordion-item" style={{ // Apply style to the item itself
-          backgroundColor: accordionItemBg,
-          color: textColor,
-          border: `1px solid ${accordionBorderColor}`
-        }}>
-          <h2 className="accordion-header" id="headingTwo">
-            <button
-              className="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo"
-              aria-expanded="false"
-              aria-controls="collapseTwo"
-              style={{
-                backgroundColor: `${accordionItemBg} !important`,
-                color: `${textColor} !important`,
-              }}
-            >
-              {/* Title for the second dropdown */}
-              <strong>Simple, Fast, and Free</strong>
-            </button>
-          </h2>
+      <div className="accordion">
+        {accordionData.map((item, index) => (
           <div
-            id="collapseTwo"
-            className="accordion-collapse collapse"
-            aria-labelledby="headingTwo"
-            data-bs-parent="#accordionExample"
+            key={index}
+            className={`accordion-item ${activeItem === index ? "active" : ""}`}
           >
-            {/* Content for the second dropdown */}
-            <div className="accordion-body" style={{
-              backgroundColor: `${accordionBodyBg} !important`,
-              color: `${textColor} !important`,
-            }}>
-              Our mission is to provide a free and accessible tool for everyone.
-              TextLab is a completely free character and word counter that gives
-              you instant statistics for any text you input. It’s perfect for
-              students, writers, and professionals who need to meet specific
-              word or character limits for their work.
-            </div>
-          </div>
-        </div>
-
-        {/* Third accordion item: Browser-Agnostic and Compatible */}
-        <div className="accordion-item" style={{ // Apply style to the item itself
-          backgroundColor: accordionItemBg,
-          color: textColor,
-          border: `1px solid ${accordionBorderColor}`
-        }}>
-          <h2 className="accordion-header" id="headingThree">
             <button
-              className="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
-              aria-expanded="false"
-              aria-controls="collapseThree"
+              className="accordion-header"
+              onClick={() => toggleAccordion(index)}
             >
-              {/* Title for the third dropdown */}
-              <strong>Browser-Agnostic and Compatible</strong>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.75rem",
+                }}
+              >
+                <i
+                  className={item.icon}
+                  style={{ color: "var(--primary-color)" }}
+                ></i>
+                <strong>{item.title}</strong>
+              </div>
+              <i className={`accordion-icon fas fa-chevron-down`}></i>
             </button>
-          </h2>
-          <div
-            id="collapseThree"
-            className="accordion-collapse collapse"
-            aria-labelledby="headingThree"
-            data-bs-parent="#accordionExample"
-          >
-            {/* Content for the third dropdown */}
-            <div className="accordion-body" style={{
-              backgroundColor: `${accordionBodyBg} !important`,
-              color: `${textColor} !important`,
-            }}>
-              TextLab is built to work seamlessly on any modern web browser,
-              including Chrome, Firefox, Safari, and Opera. Whether you are on a
-              desktop, tablet, or mobile device, you can access and use our tool
-              effortlessly. It's the perfect companion for counting characters
-              in documents, emails, social media posts, and more.
-            </div>
+            {activeItem === index && (
+              <div className="accordion-content">{item.content}</div>
+            )}
           </div>
-        </div>
+        ))}
       </div>
-      {/* Removed the local toggleMode button as mode is controlled by parent */}
+
+      <div className="card" style={{ marginTop: "2rem", textAlign: "center" }}>
+        <h3 style={{ marginBottom: "1rem", color: "var(--primary-color)" }}>
+          <i className="fas fa-rocket" style={{ marginRight: "0.5rem" }}></i>
+          Ready to Get Started?
+        </h3>
+        <p style={{ marginBottom: "1.5rem", color: "var(--text-secondary)" }}>
+          Start transforming your text with our powerful, easy-to-use tools. No
+          signup required, completely free to use.
+        </p>
+        <a
+          href="/"
+          className="btn btn-primary"
+          style={{ textDecoration: "none" }}
+        >
+          <i className="fas fa-play"></i>
+          Try TextLab Now
+        </a>
+      </div>
     </div>
   );
 }
