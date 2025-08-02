@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# TextLab – Smart Text Utilities Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**TextLab** is a browser-based tool that empowers users to format, clean, extract, and analyze text through a suite of intelligent utilities. Whether you're a writer, student, developer, or analyst, TextLab helps you work with text more efficiently. The interface is responsive and styled using custom CSS without frameworks like Bootstrap or Tailwind.
 
-## Available Scripts
+## Key Features
 
-In the project directory, you can run:
+### Text Formatting
 
-### `npm start`
+* Sentence Case: Capitalizes the first letter of each sentence.
+* Convert to UPPERCASE / lowercase.
+* Remove Extra Spaces: Cleans up redundant whitespace.
+* Text to Bullet Points: Converts each line into a bullet-point list.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Text Editing
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Find & Replace: Locate and replace specific words or phrases.
+* Duplicate Line Remover: Removes repeated lines for cleaner output.
 
-### `npm test`
+### Extraction Tools
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Extract Emails: Identifies all email addresses in the text.
+* Extract URLs: Finds and lists all hyperlinks or URLs.
 
-### `npm run build`
+### Analysis
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Word Frequency Counter: Counts how many times a specific word appears (user-defined).
+* Real-Time Counters: Displays live count of words, characters, and sentences.
+* Reading Time Estimation: Estimates how long it would take to read the text.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Utility
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Copy to Clipboard: Copies the current text to the clipboard.
+* Clear Text: Clears all text from the input field.
 
-### `npm run eject`
+## How to Use TextLab
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Open the app in your browser.
+2. Paste or type your text into the main input area.
+3. Choose a function from the control panel (e.g., Sentence Case, Extract Emails).
+4. If prompted, provide additional input such as the word to count or replace.
+5. View the results in real time.
+6. Use the Copy or Clear buttons as needed.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Programming Languages Used:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* HTML
+* CSS
+* JavaScript (React.JS)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is open-source and free for personal and educational use.
 
-### Code Splitting
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Developed by Mitul Dial  
+GitHub: https://github.com/Mitul-Dial
